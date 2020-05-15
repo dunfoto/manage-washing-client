@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-// import "./App.css";
-import ToDo from "./components/todo";
-import { Provider as ReduxProvider } from "react-redux";
+import Router from './routers';
+import { Provider } from "react-redux";
+import { Route } from 'react-router-dom';
 import configureStore from "./store";
 
 const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
@@ -9,11 +9,11 @@ const reduxStore = configureStore(window.REDUX_INITIAL_DATA);
 export default class App extends Component {
 	render() {
 		return (
-			<ReduxProvider store={reduxStore}>
-				<div className="App">
-					<ToDo />
-				</div>
-			</ReduxProvider>
+			<Provider store={reduxStore}>
+				<Route>
+					<Router />
+				</Route>
+			</Provider>
 		);
 	}
 }

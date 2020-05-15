@@ -12,7 +12,7 @@ import {
     FormControl
 } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
-import ACTIONS from "../../actions";
+import ACTIONS from "../../actions/todo";
 import { connect } from "react-redux";
 
 const styles = theme => ({
@@ -70,7 +70,7 @@ class Todo extends Component {
         const { classes } = this.props;
 
         return (
-            <React.Fragment>
+            <div className="App">
                 <form noValidate autoComplete="off" onSubmit={this.handleSubmit}>
                     <FormControl>
                         <TextField
@@ -92,7 +92,7 @@ class Todo extends Component {
                         <List dense={false}>{this.generate()}</List>
                     </div>
                 </Grid>
-            </React.Fragment>
+            </div>
         );
     }
 }

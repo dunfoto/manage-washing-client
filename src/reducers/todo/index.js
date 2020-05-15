@@ -1,4 +1,4 @@
-import ACTIONS from "../../actions";
+import ACTIONS from "../../actions/todo";
 import lodash from "lodash";
 
 const defaultState = {
